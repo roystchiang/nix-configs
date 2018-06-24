@@ -11,6 +11,7 @@
       name = "default-toolset";
       paths = with pkgs; [
         git
+        termite
       ];
     };
 
