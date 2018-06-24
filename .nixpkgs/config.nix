@@ -12,6 +12,8 @@
       paths = with pkgs; [
         git
         termite
+	tmux
+	cabal-install
       ];
     };
 
@@ -27,6 +29,7 @@
       paths = with pkgs; [
         screenfetch
         scrot
+	htop
       ];
     };
 
