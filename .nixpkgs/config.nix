@@ -4,6 +4,7 @@
   packageOverrides = pkgs_: with pkgs_; {
     # Install via
     #  nix-env -iA nixpkgs.default-toolset
+    tmux-config = import ./tmux-config {inherit pkgs; };
 
     vim-config = import ./vim-config {inherit pkgs; };
 
@@ -12,8 +13,8 @@
       paths = with pkgs; [
         git
         termite
-	tmux
-	cabal-install
+        cabal-install
+        tmux
       ];
     };
 
@@ -36,6 +37,7 @@
     all = with pkgs; buildEnv {
       name = "all";
       paths = [
+        tmux-config
         vim-config
         default-toolset
         browsers
