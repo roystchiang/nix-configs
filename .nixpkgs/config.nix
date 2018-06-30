@@ -8,13 +8,23 @@
 
     vim-config = import ./vim-config {inherit pkgs; };
 
+    xmonad-config = import ./xmonad-config {inherit pkgs; };
+
     default-toolset = pkgs.buildEnv {
       name = "default-toolset";
       paths = with pkgs; [
         git
         termite
-        cabal-install
         tmux
+      ];
+    };
+
+    xmonad = pkgs.buildEnv {
+      name = "xmonad";
+      paths = with pkgs; [
+        haskellPackages.xmonad
+        haskellPackages.xmonad-extras
+        haskellPackages.xmonad-contrib
       ];
     };
 
@@ -39,7 +49,10 @@
       paths = [
         tmux-config
         vim-config
+        xmonad-config
         default-toolset
+        xmonad
+        haskellPackages.xmobar
         browsers
         random
       ];

@@ -28,7 +28,7 @@
   # };
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "America/Vancouver";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -85,4 +85,14 @@
   system.stateVersion = "18.03"; # Did you read the comment?
 
   nixpkgs.config.allowUnfree = true;
+
+  fileSystems."/mnt/sdb1" = {
+    device = "/dev/sdb1";
+    fsType = "ext4";
+  };
+
+  fileSystems."/mnt/sdd1" = {
+    device = "/dev/sdd1";
+    fsType = "ext4";
+  };
 }
