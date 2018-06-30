@@ -40,7 +40,8 @@
       paths = with pkgs; [
         screenfetch
         scrot
-	htop
+	      htop
+        feh
       ];
     };
 
